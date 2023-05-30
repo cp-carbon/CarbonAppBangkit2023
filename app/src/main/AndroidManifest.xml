@@ -12,6 +12,17 @@
         android:theme="@style/Theme.CarbonApp"
         tools:targetApi="31">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.CarbonApp.NoActionBar" />
+        <activity
+            android:name=".SignUpVehicleSetupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignupPreferenceActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.login.SignUpActivity"
             android:exported="false"
             android:label="@string/title_activity_sign_up" />

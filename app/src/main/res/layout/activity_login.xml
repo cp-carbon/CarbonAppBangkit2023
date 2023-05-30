@@ -19,7 +19,8 @@
         android:background="@drawable/logo_carbon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/app_name"/>
 
     <TextView
         android:layout_width="358dp"
@@ -33,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/username"
         android:layout_width="358dp"
         android:layout_height="56dp"
         android:padding="16dp"
@@ -61,7 +62,7 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/username"
         android:autofillHints="@string/prompt_password" />
 
     <Button

@@ -1,21 +1,26 @@
 <resources>
     <string name="app_name">CarbonApp</string>
+    <string name="company_name">Carbon</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="prompt_fullname">Fullname</string>
     <string name="prompt_confirmpass">Confirm Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="action_sign_in_google">Sign in dengan Google</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_google">Continue with Google</string>
+    <string name="action_sign_up">Register</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="loading">Loading…</string>
 
     <string name="signin_text">Begin your zero carbon footprint journey</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="sign_in">Sign in</string>
+    <string name="sign_up">Signup</string>
+    <string name="sign_up_message">Don\'t have an account?</string>
+    <string name="sign_out">Sign Out</string>
 
     <string name="let_us_know">Let us know you better</string>
     <string name="which_trans"> Which transportation do you use the most?</string>
@@ -38,13 +43,60 @@
         <item>Class C</item>
     </string-array>
     <string name="title_activity_home">HomeActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="save">Save</string>
+    <string name="or">or</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="register_did_you_know_header">Did you know?</string>
+    <string name="register_did_you_know_body1">According to data from the Global Carbon Project, Indonesia\'s per capita carbon dioxide emissions in 2019 were 2.1 metric tons per person per year.</string>
+    <string name="register_did_you_know_body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu laoreet diam. Aenean rhoncus dui nec arcu sodales scelerisque. Fusce blandit fringilla pulvinar. Vivamus efficitur nec nisl non luctus. Nunc consectetur non leo ut consequat. Quisque non finibus ex, quis convallis metus. Pellentesque varius erat in ultricies sagittis.</string>
+    <string name="register_did_you_know_body3">Fusce a eleifend tortor, sit amet pulvinar ipsum. Aenean pulvinar interdum luctus. Donec vitae blandit risus. Nullam facilisis arcu at molestie lobortis. Aliquam gravida et quam finibus efficitur. Vivamus scelerisque nec ex in tristique. Integer mollis vitae lacus a varius. Donec tristique consectetur tristique. Aliquam dictum a velit vitae tempor. \n\nCurabitur commodo, tortor ut congue pharetra, mauris augue dignissim arcu, nec mattis augue nunc vel augue. Nunc pharetra consequat quam vitae scelerisque.</string>
 
+    <string name="register_begin_journey_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu laoreet diam. Aenean rhoncus dui nec arcu sodales scelerisque. Fusce blandit fringilla pulvinar. Vivamus efficitur nec nisl non luctus. Nunc consectetur non leo ut consequat. Quisque non finibus ex, quis convallis metus. Pellentesque varius erat in ultricies sagittis.</string>
+    <string name="begin_journey">Begin Journey</string>
+
+    <string name="component_emission_tracker_title">%1$s emission contribution</string>
+    <string name="component_emission_tracker_percentage">%1$d%% lower than average indonesian</string>
+    <string name="emission_value">%1$d CO2e</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_my_activity">My Activity</string>
+    <string name="menu_account">Account</string>
+    <string name="menu_edit">Edit</string>
+
+    <string name="km_8">8 km</string>
+    <string name="h_24">24H</string>
+    <string name="w_1">1W</string>
+    <string name="m_1">1M</string>
+    <string name="y_1">1Y</string>
+    <string name="all">All</string>
+
+    <string name="home_greetings">Good morning</string>
+    <string name="home_travel_activities">Travel activities</string>
+    <string name="home_news_header">Hear some good news</string>
+    <string name="home_news_date">UNDP Climate - May 7</string>
+    <string name="home_news_title">Small green business are crucial for the low-carbon…</string>
+    <string name="home_news_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu laoreet diam. Aenean rhoncus dui nec arcu sodales scelerisque.</string>
+    <string name="home_action_add_activity">Add Activity</string>
+    <string name="home_choose_activity">Choose Activity</string>
+    <string name="home_activity_eating">I\'m eating/drinking</string>
+    <string name="home_activity_eating_detail">Scan up to 15+ food/drink types</string>
+    <string name="home_activity_traveling">I\'m traveling</string>
+    <string name="home_activity_traveling_detail">Walking, cycling, driving, or using public transport</string>
+    <string name="home_activity_custom">Other</string>
+    <string name="home_activity_custom_detail">Tell us what you are up to</string>
+
+    <string name="emission_generated">Emission Generated</string>
+    <string name="min_travel_distance">Minimum travel distance <font color="#FFFFFF">%1$dm</font></string>
+    <string name="statistics">Statistics</string>
+    <string name="travel_distance_km">%1$dkm</string>
+    <string name="travel_by_walk">Travel by walk</string>
+    <string name="travel_by_bike">Travel by bike</string>
+    <string name="placeholder_name">Joe Biden</string>
+    <string name="placeholder_email">joeeeeeeee123@mail.com</string>
+    <string name="general">General</string>
+    <string name="opt_live_location">Live location</string>
+    <string name="opt_manage_permission">Manage permission</string>
 </resources>

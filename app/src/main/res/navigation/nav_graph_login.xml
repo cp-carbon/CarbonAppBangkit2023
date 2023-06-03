@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_login"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.carbonapp.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/login_fade_in"
+            app:exitAnim="@anim/login_fade_out"
+            app:popEnterAnim="@anim/login_fade_in"
+            app:popExitAnim="@anim/login_fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.carbonapp.ui.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_registerPickPreferenceFragment"
+            app:destination="@id/registerPickPreferenceFragment"
+            app:enterAnim="@anim/login_fade_in"
+            app:exitAnim="@anim/login_fade_out"
+            app:popEnterAnim="@anim/login_fade_in"
+            app:popExitAnim="@anim/login_fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerPickPreferenceFragment"
+        android:name="com.example.carbonapp.ui.register_pick_preference.RegisterPickPreferenceFragment"
+        android:label="fragment_register_pick_preference"
+        tools:layout="@layout/fragment_register_pick_preference" >
+        <action
+            android:id="@+id/action_registerPickPreferenceFragment_to_registerCarSetupFragment"
+            app:destination="@id/registerCarSetupFragment"
+            app:enterAnim="@anim/login_fade_in"
+            app:exitAnim="@anim/login_fade_out"
+            app:popEnterAnim="@anim/login_fade_in"
+            app:popExitAnim="@anim/login_fade_out" />
+        <action
+            android:id="@+id/action_registerPickPreferenceFragment_to_registerDidYouKnowFragment"
+            app:destination="@id/registerDidYouKnowFragment"
+            app:enterAnim="@anim/login_fade_in"
+            app:exitAnim="@anim/login_fade_out"
+            app:popEnterAnim="@anim/login_fade_in"
+            app:popExitAnim="@anim/login_fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerCarSetupFragment"
+        android:name="com.example.carbonapp.ui.register_car_setup.RegisterCarSetupFragment"
+        android:label="fragment_register_car_setup"
+        tools:layout="@layout/fragment_register_car_setup">
+        <action
+            android:id="@+id/action_registerCarSetupFragment_to_registerDidYouKnowFragment"
+            app:destination="@id/registerDidYouKnowFragment"
+            app:enterAnim="@anim/login_fade_in"
+            app:exitAnim="@anim/login_fade_out"
+            app:popEnterAnim="@anim/login_fade_in"
+            app:popExitAnim="@anim/login_fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerDidYouKnowFragment"
+        android:name="com.example.carbonapp.ui.register_did_you_know.RegisterDidYouKnowFragment"
+        android:label="fragment_register_did_you_know"
+        tools:layout="@layout/fragment_register_did_you_know">
+        <action
+            android:id="@+id/action_registerDidYouKnowFragment_to_registerBeginJourneyFragment"
+            app:destination="@id/registerBeginJourneyFragment"
+            app:enterAnim="@anim/login_fade_in"
+            app:exitAnim="@anim/login_fade_out"
+            app:popEnterAnim="@anim/login_fade_in"
+            app:popExitAnim="@anim/login_fade_out"
+            app:popUpTo="@id/registerDidYouKnowFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerBeginJourneyFragment"
+        android:name="com.example.carbonapp.ui.register_begin_journey.RegisterBeginJourneyFragment"
+        android:label="fragment_register_begin_journey"
+        tools:layout="@layout/fragment_register_begin_journey" />
+</navigation>

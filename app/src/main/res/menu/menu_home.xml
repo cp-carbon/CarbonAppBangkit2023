@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="@string/menu_home"
+        android:icon="@drawable/ic_home_black"
+        />
+    <item
+        android:title="@string/menu_my_activity"
+        android:icon="@drawable/ic_home_black"
+        />
+    <item
+        android:title="@string/menu_account"
+        android:icon="@drawable/ic_home_black"
+        />
+</menu>

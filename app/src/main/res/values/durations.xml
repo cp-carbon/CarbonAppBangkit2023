@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home fragment transition duration -->
+    <integer name="home_fade_in_duration">1500</integer>
+    <integer name="home_fade_out_duration">1500</integer>
+
+    <!-- Login & Register fragment transition duration -->
+    <integer name="login_fade_in_duration">1500</integer>
+    <integer name="login_fade_out_duration">1500</integer>
+
+    <!-- RegisterDidYouKnowFragment animation durations and delays -->
+    <integer name="rdyk_text_fade_in_duration">1500</integer>
+    <integer name="rdyk_text_fade_out_duration">1500</integer>
+    <integer name="rdyk_text_fade_in_delay">1500</integer>
+    <integer name="rdyk_text_fade_out_delay">5000</integer>
+</resources>

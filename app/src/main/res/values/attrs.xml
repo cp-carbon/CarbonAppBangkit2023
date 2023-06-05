@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EmissionTracker">
+        <attr name="backgroundColor" format="color" />
+        <attr name="timeLength" format="enum">
+            <enum name="today" value="0" />
+            <enum name="all_time" value="1" />
+        </attr>
+        <!-- How much emission has been contributed in number. -->
+        <attr name="emissionValue" format="integer" />
+        <!-- Specifies the progress percentage. Value ranging from 0 to 1.  -->
+        <attr name="progressPercentage" format="float" />
+        <attr name="contentPadding" format="dimension" />
+    </declare-styleable>
+</resources>

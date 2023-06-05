@@ -1,55 +1,56 @@
 package com.example.carbonapp.ui.login
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import android.util.Patterns
 import com.example.carbonapp.data.LoginRepository
-import com.example.carbonapp.data.Result
+import com.example.carbonapp.data.Response
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 
-import com.example.carbonapp.R
+class LoginViewModel : ViewModel() {
 
-class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
+    private val loginRepository = LoginRepository.instance
+    private val _uiState = MutableStateFlow(LoginUiState())
+    val uiState: StateFlow<LoginUiState> = _uiState.asStateFlow()
 
-    private val _loginForm = MutableLiveData<LoginFormState>()
-    val loginFormState: LiveData<LoginFormState> = _loginForm
+    fun isLoggedIn(): Boolean {
+        return loginRepository.isLoggedIn
+    }
 
-    private val _loginResult = MutableLiveData<LoginResult>()
-    val loginResult: LiveData<LoginResult> = _loginResult
+    fun login(email: String, password: String) {
+        if (email.isBlank() || password.isBlank()) {
+            _uiState.update {
+                it.copy(errorMessage = "Email and Password can't be empty")
+            }
+            return
+        }
 
-    fun login(username: String, password: String) {
-        // can be launched in a separate asynchronous job
-        val result = loginRepository.login(username, password)
-
-        if (result is Result.Success) {
-            _loginResult.value =
-                LoginResult(success = LoggedInUserView(displayName = result.data.displayName))
-        } else {
-            _loginResult.value = LoginResult(error = R.string.login_failed)
+        _uiState.update { it.copy(isLoading = true) }
+        loginRepository.login(email, password) { result ->
+            if (result is Response.Success) {
+                _uiState.update {
+                    it.copy(
+                        isLoading = false,
+                        isLoginSuccess = true,
+                        errorMessage = null
+                    )
+                }
+            }
+            if (result is Response.Error) {
+                _uiState.update {
+                    it.copy(
+                        isLoading = false,
+                        isLoginSuccess = false,
+                        errorMessage = result.exception.message
+                    )
+                }
+            }
         }
     }
 
-    fun loginDataChanged(username: String, password: String) {
-        if (!isUserNameValid(username)) {
-            _loginForm.value = LoginFormState(usernameError = R.string.invalid_username)
-        } else if (!isPasswordValid(password)) {
-            _loginForm.value = LoginFormState(passwordError = R.string.invalid_password)
-        } else {
-            _loginForm.value = LoginFormState(isDataValid = true)
-        }
-    }
-
-    // A placeholder username validation check
-    private fun isUserNameValid(username: String): Boolean {
-        return if (username.contains('@')) {
-            Patterns.EMAIL_ADDRESS.matcher(username).matches()
-        } else {
-            username.isNotBlank()
-        }
-    }
-
-    // A placeholder password validation check
-    private fun isPasswordValid(password: String): Boolean {
-        return password.length > 5
+    // TODO: Implement login with google
+    fun loginWithGoogle() {
+        throw NotImplementedError()
     }
 }

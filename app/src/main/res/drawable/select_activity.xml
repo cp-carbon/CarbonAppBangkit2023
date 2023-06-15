@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@android:color/transparent" /> <!-- Warna latar belakang tombol -->
-    <corners android:radius="28dp" /> <!-- Sudut tombol yang dibulatkan -->
-    <stroke android:width="5px" android:color="@color/white_200" />
+    <corners android:radius="12dp" /> <!-- Sudut tombol yang dibulatkan -->
+    <stroke android:width="1px" android:color="@color/light_grey" />
 </shape>

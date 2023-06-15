@@ -240,10 +240,11 @@
                     android:textColor="@color/light_grey"/>
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/h_rv_twitterpost"
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/h_rv_news"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="372dp"
+                android:layout_marginBottom="120dp"/>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

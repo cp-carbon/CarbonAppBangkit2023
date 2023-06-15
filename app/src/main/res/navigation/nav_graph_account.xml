@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_account"
+    app:startDestination="@id/accountFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.carbonapp.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_myActivityFragment"
+            app:destination="@id/myActivityFragment"
+            app:enterAnim="@anim/home_fade_in"
+            app:exitAnim="@anim/home_fade_out"
+            app:popEnterAnim="@anim/home_fade_in"
+            app:popExitAnim="@anim/home_fade_out"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment_to_accountFragment"
+            app:destination="@id/accountFragment"
+            app:enterAnim="@anim/home_fade_in"
+            app:exitAnim="@anim/home_fade_out"
+            app:popEnterAnim="@anim/home_fade_in"
+            app:popExitAnim="@anim/home_fade_out"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/myActivityFragment"
+        android:name="com.example.carbonapp.ui.my_activity.MyActivityFragment"
+        android:label="fragment_my_activity"
+        tools:layout="@layout/fragment_my_activity" >
+        <action
+            android:id="@+id/action_myActivityFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/home_fade_in"
+            app:exitAnim="@anim/home_fade_out"
+            app:popEnterAnim="@anim/home_fade_in"
+            app:popExitAnim="@anim/home_fade_out"
+            app:popUpTo="@id/myActivityFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_myActivityFragment_to_accountFragment"
+            app:destination="@id/accountFragment"
+            app:enterAnim="@anim/home_fade_in"
+            app:exitAnim="@anim/home_fade_out"
+            app:popEnterAnim="@anim/home_fade_in"
+            app:popExitAnim="@anim/home_fade_out"
+            app:popUpTo="@id/myActivityFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.carbonapp.ui.account.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/home_fade_in"
+            app:exitAnim="@anim/home_fade_out"
+            app:popEnterAnim="@anim/home_fade_in"
+            app:popExitAnim="@anim/home_fade_out"
+            app:popUpTo="@id/accountFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_accountFragment_to_myActivityFragment"
+            app:destination="@id/myActivityFragment"
+            app:enterAnim="@anim/home_fade_in"
+            app:exitAnim="@anim/home_fade_out"
+            app:popEnterAnim="@anim/home_fade_in"
+            app:popExitAnim="@anim/home_fade_out"
+            app:popUpTo="@id/accountFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

@@ -6,16 +6,16 @@
     <string name="prompt_password">Password</string>
     <string name="prompt_fullname">Fullname</string>
     <string name="prompt_confirmpass">Confirm Password</string>
-    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in">Sign In</string>
     <string name="action_sign_in_google">Continue with Google</string>
-    <string name="action_sign_up">Register</string>
+    <string name="action_sign_up">Sign Up</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="loading">Loading…</string>
 
-    <string name="signin_text">Begin your zero carbon footprint journey</string>
+    <string name="signin_text">Begin your zero \n carbon footprint journey</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="sign_in">Sign in</string>
     <string name="sign_up">Signup</string>
@@ -30,6 +30,8 @@
     <string name="public_transport">Public Transport</string>
     <string name="bike">Bike</string>
     <string name="uber">Uber</string>
+
+    <string name="which_vehicle_brand">Please choose your vehicle brand and model</string>
 
     <string-array name="car_brand">
         <item>Suzuki</item>
@@ -54,7 +56,7 @@
     <string name="register_did_you_know_body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu laoreet diam. Aenean rhoncus dui nec arcu sodales scelerisque. Fusce blandit fringilla pulvinar. Vivamus efficitur nec nisl non luctus. Nunc consectetur non leo ut consequat. Quisque non finibus ex, quis convallis metus. Pellentesque varius erat in ultricies sagittis.</string>
     <string name="register_did_you_know_body3">Fusce a eleifend tortor, sit amet pulvinar ipsum. Aenean pulvinar interdum luctus. Donec vitae blandit risus. Nullam facilisis arcu at molestie lobortis. Aliquam gravida et quam finibus efficitur. Vivamus scelerisque nec ex in tristique. Integer mollis vitae lacus a varius. Donec tristique consectetur tristique. Aliquam dictum a velit vitae tempor. \n\nCurabitur commodo, tortor ut congue pharetra, mauris augue dignissim arcu, nec mattis augue nunc vel augue. Nunc pharetra consequat quam vitae scelerisque.</string>
 
-    <string name="register_begin_journey_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu laoreet diam. Aenean rhoncus dui nec arcu sodales scelerisque. Fusce blandit fringilla pulvinar. Vivamus efficitur nec nisl non luctus. Nunc consectetur non leo ut consequat. Quisque non finibus ex, quis convallis metus. Pellentesque varius erat in ultricies sagittis.</string>
+    <string name="register_begin_journey_body">Fighting climate change requires collective action from individuals, communities, businesses, and governments. Each individual`s actions may seem small, but they can collectively make a significant impact in reducing carbon emissions and mitigating the effects of climate change.</string>
     <string name="begin_journey">Begin Journey</string>
 
     <string name="component_emission_tracker_title">%1$s emission contribution</string>
@@ -94,8 +96,10 @@
     <string name="travel_distance_km">%1$dkm</string>
     <string name="travel_by_walk">Travel by walk</string>
     <string name="travel_by_bike">Travel by bike</string>
-    <string name="placeholder_name">Joe Biden</string>
-    <string name="placeholder_email">joeeeeeeee123@mail.com</string>
+    <string name="travel_by_car">Travel by car</string>
+    <string name="travel_by_public_transport">Travel by public transport</string>
+    <string name="placeholder_name">Vince Aurelius</string>
+    <string name="placeholder_email">vince@personal.com</string>
     <string name="general">General</string>
     <string name="opt_live_location">Live location</string>
     <string name="opt_manage_permission">Manage permission</string>

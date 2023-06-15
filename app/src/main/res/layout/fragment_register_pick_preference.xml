@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/img_bg"
     tools:context=".ui.register_pick_preference.RegisterPickPreferenceFragment">
 
     <TextView
@@ -14,6 +16,7 @@
         android:layout_alignParentTop="true"
         android:gravity="center_horizontal|top"
         android:text="@string/let_us_know"
+        android:textStyle="bold"
         android:textAppearance="@style/let_us_know"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,6 +59,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
+            android:backgroundTint="#333333"
+            android:textColor="@color/white"
             android:text="@string/car" />
 
         <com.google.android.material.chip.Chip
@@ -63,6 +68,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
+            android:backgroundTint="#333333"
+            android:textColor="@color/white"
             android:text="@string/motorcycle" />
 
         <com.google.android.material.chip.Chip
@@ -70,6 +77,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
+            android:backgroundTint="#333333"
+            android:textColor="@color/white"
             android:text="@string/public_transport" />
 
         <com.google.android.material.chip.Chip
@@ -77,6 +86,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
+            android:backgroundTint="#333333"
+            android:textColor="@color/white"
             android:text="@string/bike" />
 
         <com.google.android.material.chip.Chip
@@ -84,19 +95,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
+            android:backgroundTint="#333333"
+            android:textColor="@color/white"
             android:text="@string/uber" />
 
     </com.google.android.material.chip.ChipGroup>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:padding="18dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="64dp"
         android:background="@drawable/signin_button_background"
         android:text="@string/next"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

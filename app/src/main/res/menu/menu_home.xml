@@ -3,14 +3,14 @@
 
     <item
         android:title="@string/menu_home"
-        android:icon="@drawable/ic_home_black"
+        android:icon="@drawable/ic_home_gray"
         />
     <item
         android:title="@string/menu_my_activity"
-        android:icon="@drawable/ic_home_black"
+        android:icon="@drawable/ic_walk_gray_24"
         />
     <item
         android:title="@string/menu_account"
-        android:icon="@drawable/ic_home_black"
+        android:icon="@drawable/ic_account_circle_gray"
         />
 </menu>

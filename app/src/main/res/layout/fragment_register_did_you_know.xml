@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="12dp"
+    android:padding="16dp"
+    android:background="@drawable/img_bg"
     tools:context=".ui.register_did_you_know.RegisterDidYouKnowFragment">
 
     <TextView
@@ -12,6 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/register_did_you_know_header"
+        android:textStyle="bold"
         android:textAppearance="@style/let_us_know"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

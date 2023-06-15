@@ -5,6 +5,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/rounded_card"
+            android:padding="12dp"
             android:orientation="vertical">
 
             <TextView
@@ -12,14 +14,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/component_emission_tracker_title"
-                android:textColor="@color/black" />
+                android:textColor="@color/light_grey" />
 
             <TextView
                 android:id="@+id/cet_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="12dp"
                 android:text="@string/emission_value"
-                android:textColor="@color/black" />
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
 
             <com.google.android.material.progressindicator.LinearProgressIndicator
                 android:id="@+id/cet_progress"
@@ -27,15 +33,18 @@
                 android:layout_height="wrap_content"
                 android:max="100"
                 android:progress="50"
-                app:trackThickness="8dp" />
+                app:trackCornerRadius="12dp"
+                app:trackThickness="6dp" />
 
             <TextView
                 android:id="@+id/cet_percentage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
+                android:paddingTop="8dp"
                 android:text="@string/component_emission_tracker_percentage"
-                android:textColor="@color/black" />
+                android:textSize="12sp"
+                android:textColor="@color/light_grey" />
         </LinearLayout>
 
 </merge>

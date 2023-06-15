@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_bg"
+    android:padding="16dp"
     tools:context=".ui.register.RegisterFragment">
 
     <Button
         android:id="@+id/r_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:background="@android:color/transparent"
         android:drawableLeft="@drawable/chevron_left"
@@ -22,31 +23,35 @@
 
     <EditText
         android:id="@+id/r_fullname"
-        android:layout_width="358dp"
+        android:layout_width="fill_parent"
         android:layout_height="56dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="104dp"
         android:autofillHints="@string/prompt_fullname"
         android:background="@drawable/input_text_background"
         android:hint="@string/prompt_fullname"
+        android:textColorHint="@color/light_grey"
         android:inputType="text"
         android:padding="16dp"
         android:selectAllOnFocus="true"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/r_email"
-        android:layout_width="358dp"
+        android:layout_width="fill_parent"
         android:layout_height="56dp"
         android:padding="16dp"
         android:background="@drawable/input_text_background"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:hint="@string/prompt_email"
+        android:textColorHint="@color/light_grey"
         android:imeActionLabel="@string/action_sign_in"
         android:imeOptions="actionDone"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/r_fullname"
@@ -54,16 +59,18 @@
 
     <EditText
         android:id="@+id/r_password"
-        android:layout_width="358dp"
+        android:layout_width="fill_parent"
         android:layout_height="56dp"
         android:padding="16dp"
         android:background="@drawable/input_text_background"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:hint="@string/prompt_password"
+        android:textColorHint="@color/light_grey"
         android:imeActionLabel="@string/action_sign_in"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/r_email"
@@ -71,36 +78,38 @@
 
     <EditText
         android:id="@+id/r_confirmpassword"
-        android:layout_width="358dp"
+        android:layout_width="fill_parent"
         android:layout_height="56dp"
         android:padding="16dp"
         android:background="@drawable/input_text_background"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:hint="@string/prompt_confirmpass"
+        android:textColorHint="@color/light_grey"
         android:imeActionLabel="@string/action_sign_in"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/r_password"
         android:autofillHints="@string/prompt_confirmpass" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/r_register"
-        android:layout_width="300dp"
+        android:layout_width="fill_parent"
         android:layout_height="56dp"
         android:layout_gravity="start"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/signin_button_background"
         android:text="@string/action_sign_up"
-        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/r_confirmpassword"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.178" />
 
     <ProgressBar
         android:id="@+id/loading"

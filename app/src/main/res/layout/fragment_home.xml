@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_bg"
+    android:padding="16dp"
     android:fitsSystemWindows="true"
     tools:context=".ui.home.HomeFragment">
 
@@ -12,6 +14,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
         app:elevation="0dp">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -29,13 +32,14 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/bg_signin" />
+                    android:src="@drawable/logo_only" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="12dp"
-                    android:text="@string/home_greetings" />
+                    android:text="@string/home_greetings"
+                    android:textColor="@color/white"/>
 
             </androidx.appcompat.widget.Toolbar>
 
@@ -45,7 +49,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#D6D6D6"
+        android:background="@android:color/transparent"
         android:overScrollMode="always"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -59,21 +63,21 @@
             <com.example.carbonapp.component.EmissionTracker
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
-                app:contentPadding="10dp"
+                app:contentPadding="0dp"
+                app:emissionValue="1000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:progressPercentage="0.5"
-                app:timeLength="today"
-                app:emissionValue="1000" />
+                app:timeLength="today" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
-                app:cardBackgroundColor="#AEAEAE"
-                app:contentPadding="10dp">
+                app:cardBackgroundColor="@color/dark_grey"
+                android:layout_marginTop="12dp"
+                app:contentPadding="12dp"
+                app:cardCornerRadius="12dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -83,14 +87,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:text="@string/home_travel_activities" />
+                        android:layout_marginBottom="12dp"
+                        android:text="@string/home_travel_activities"
+                        android:textColor="@color/light_grey"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="4dp"
+                        android:layout_marginBottom="12dp"
                         android:gravity="center"
                         android:orientation="horizontal">
 
@@ -102,17 +106,82 @@
                         <com.google.android.material.progressindicator.LinearProgressIndicator
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="16dp"
                             android:layout_weight="1"
                             android:max="100"
                             android:progress="50"
+                            app:trackCornerRadius="3dp"
                             app:trackThickness="6dp" />
 
                         <TextView
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
-                            android:text="@string/km_8" />
+                            android:text="@string/km_8"
+                            android:textSize="12sp"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_bike_white" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_weight="1"
+                            android:max="100"
+                            android:progress="50"
+                            app:trackCornerRadius="3dp"
+                            app:trackThickness="6dp" />
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/km_8"
+                            android:textSize="12sp"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_car_white" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_weight="1"
+                            android:max="100"
+                            android:progress="50"
+                            app:trackCornerRadius="3dp"
+                            app:trackThickness="6dp" />
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/km_8"
+                            android:textSize="12sp"
+                            android:textColor="@color/white"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -126,80 +195,25 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_walk_white" />
+                            android:src="@drawable/ic_train_white" />
 
                         <com.google.android.material.progressindicator.LinearProgressIndicator
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="16dp"
                             android:layout_weight="1"
                             android:max="100"
                             android:progress="50"
+                            app:trackCornerRadius="3dp"
                             app:trackThickness="6dp" />
 
                         <TextView
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
-                            android:text="@string/km_8" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_walk_white" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_weight="1"
-                            android:max="100"
-                            android:progress="50"
-                            app:trackThickness="6dp" />
-
-                        <TextView
-                            android:layout_width="60dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/km_8" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_walk_white" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_weight="1"
-                            android:max="100"
-                            android:progress="50"
-                            app:trackThickness="6dp" />
-
-                        <TextView
-                            android:layout_width="60dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/km_8" />
+                            android:text="@string/km_8"
+                            android:textSize="12sp"
+                            android:textColor="@color/white"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -208,20 +222,22 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="18dp"
                 android:gravity="center|start"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_walk_white" />
+                    android:src="@drawable/ic_radio_gray" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:text="@string/home_news_header" />
+                    android:text="@string/home_news_header"
+                    android:textColor="@color/light_grey"/>
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -239,6 +255,8 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="80dp"
-        android:text="@string/home_action_add_activity" />
+        android:text="@string/home_action_add_activity"
+        android:textStyle="bold"
+        android:textColor="@color/blue"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

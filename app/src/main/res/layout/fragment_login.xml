@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_login"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/sign_in_bg"
+    android:padding="16dp"
     tools:context=".ui.login.LoginFragment">
 
     <ImageView
         android:layout_width="172dp"
         android:layout_height="40dp"
-        android:layout_marginTop="122dp"
+        android:layout_marginTop="90dp"
         android:background="@drawable/logo_carbon"
         android:contentDescription="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,51 +20,59 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/l_carbon_slogan"
         android:layout_width="358dp"
         android:layout_height="70dp"
-        android:layout_marginTop="186dp"
         android:gravity="center_horizontal|top"
         android:textAppearance="@style/TextSpec.Heading1"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.255"
         tools:text="@string/signin_text" />
 
     <EditText
         android:id="@+id/l_email"
-        android:layout_width="358dp"
+        android:layout_width="fill_parent"
         android:layout_height="56dp"
-        android:layout_marginTop="312dp"
+        android:layout_marginTop="282dp"
         android:autofillHints="@string/prompt_email"
         android:background="@drawable/input_text_background"
         android:hint="@string/prompt_email"
+        android:textColorHint="@color/light_grey"
         android:inputType="textEmailAddress"
         android:padding="16dp"
         android:selectAllOnFocus="true"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/l_password"
-        android:layout_width="358dp"
+        android:layout_width="fill_parent"
         android:layout_height="56dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:autofillHints="@string/prompt_password"
         android:background="@drawable/input_text_background"
         android:hint="@string/prompt_password"
+        android:textColorHint="@color/light_grey"
         android:imeActionLabel="@string/action_sign_in"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:padding="16dp"
         android:selectAllOnFocus="true"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/l_email" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/l_login"
-        android:layout_width="300dp"
+        android:layout_width="fill_parent"
         android:layout_height="56dp"
         android:layout_gravity="start"
         android:layout_marginTop="16dp"
@@ -74,28 +80,42 @@
         android:background="@drawable/signin_button_background"
         android:text="@string/action_sign_in"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/l_sign_in_divider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/l_password"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.122" />
 
-    <Button
+    <ImageView
+        android:id="@+id/l_sign_in_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/sign_in_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/l_login" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/l_login_google"
-        android:layout_width="300dp"
+        android:layout_width="fill_parent"
         android:layout_height="56dp"
         android:layout_gravity="start"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="64dp"
         android:background="@drawable/google_signin_button_background"
         android:drawableLeft="@drawable/google_logo"
+        android:paddingHorizontal="24dp"
         android:enabled="true"
         android:text="@string/action_sign_in_google"
+        android:textStyle="bold"
         android:textSize="16sp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/l_login"
+        app:layout_constraintTop_toBottomOf="@+id/l_sign_in_divider"
         app:layout_constraintVertical_bias="0.2" />
 
     <ProgressBar
@@ -120,6 +140,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:text="@string/sign_up"
+        android:textStyle="bold"
         android:textAllCaps="true"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"

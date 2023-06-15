@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:fontFamily">@font/lexend</item>
     </style>
 
     <style name="TextSpec.Heading1">
@@ -55,5 +56,4 @@
     <style name="Theme.CarbonApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.CarbonApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
 </resources>

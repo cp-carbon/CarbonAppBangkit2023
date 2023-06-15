@@ -4,34 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="12dp"
-    android:background="@drawable/bg_signin"
-    tools:context=".ui.register_did_you_know.RegisterDidYouKnowFragment">
+    tools:context=".AccountActivity">
 
-    <TextView
-        android:id="@+id/pr_header"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment_account"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/register_did_you_know_header"
-        android:textAppearance="@style/let_us_know"
-        android:textColor="@color/white"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:navGraph="@navigation/nav_graph_account" />
 
-    <TextView
-        android:id="@+id/pr_body"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_account"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/register_did_you_know_body3"
-        android:textAppearance="@style/which_trans"
-        android:textColor="@color/white"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pr_header" />
+        app:menu="@menu/menu_home" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@ import com.example.carbonapp.R
 import com.example.carbonapp.helper.Navigator
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+
 class AccountFragment : Fragment() {
 
     private lateinit var viewModel: AccountViewModel

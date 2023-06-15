@@ -1,8 +1,10 @@
 package com.example.carbonapp.data.response
 
+import com.google.gson.annotations.SerializedName
+
 data class AccountResponse(
-    val averageEmission: Int,
+    @SerializedName("average_emission") val averageEmission: Int,
     val profile: Profile,
 ) {
-    inner class Profile(val name: String, val email: String)
+    inner class Profile(val fullname: String, val email: String)
 }

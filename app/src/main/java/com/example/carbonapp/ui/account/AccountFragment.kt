@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
@@ -49,7 +50,22 @@ class AccountFragment : Fragment() {
         bottomNav.setOnItemSelectedListener(HomeOnNavigationItemSelected(this))
     }
 
+    override fun onStart() {
+        super.onStart()
+        viewModel.load()
+    }
+
     private fun onStateUpdate(state: AccountUiState) {
+        if (state.isLoading) {
+            Toast.makeText(context, resources.getString(R.string.loading), Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (state.hasError) {
+            Toast.makeText(context, state.errorMessage, Toast.LENGTH_SHORT).show()
+            return
+        }
+
         if (state.isSuccessLogout) {
             navigateToLoginActivity()
             return

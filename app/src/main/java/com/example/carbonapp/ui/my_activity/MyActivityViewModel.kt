@@ -2,7 +2,7 @@ package com.example.carbonapp.ui.my_activity
 
 import androidx.lifecycle.ViewModel
 import com.example.carbonapp.data.HttpResult
-import com.example.carbonapp.data.repository.ActivityRepository
+import com.example.carbonapp.data.repository.MyActivityRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -10,13 +10,13 @@ import kotlinx.coroutines.flow.update
 
 class MyActivityViewModel : ViewModel() {
 
-    private val activityRepository = ActivityRepository.instance
+    private val myActivityRepository = MyActivityRepository.instance
     private val _uiState = MutableStateFlow(MyActivityUiState())
     val uiState: StateFlow<MyActivityUiState> = _uiState.asStateFlow()
 
     fun load() {
-        if (activityRepository.data != null) {
-            val data = activityRepository.data!!
+        if (myActivityRepository.data != null) {
+            val data = myActivityRepository.data!!
 
             _uiState.update {
                 it.copy(
@@ -29,7 +29,7 @@ class MyActivityViewModel : ViewModel() {
 
         _uiState.update { it.copy(isLoading = true) }
 
-        activityRepository.fetchData { response ->
+        myActivityRepository.fetchData { response ->
             if (response is HttpResult.Success) {
                 _uiState.update {
                     it.copy(

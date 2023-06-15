@@ -40,5 +40,7 @@ class EmissionTracker @JvmOverloads
         setContentPadding(
             contentPadding, contentPadding, contentPadding, contentPadding
         )
+
+        background = resources.getDrawable(R.drawable.rounded_card, null)
     }
 }

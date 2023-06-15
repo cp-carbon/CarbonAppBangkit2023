@@ -12,6 +12,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.example.carbonapp.HomeOnNavigationItemSelected
 import com.example.carbonapp.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -26,7 +28,7 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
-        newsAdapter = HomeNewsAdapter()
+        newsAdapter = HomeNewsAdapter(requireContext())
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.uiState.collect { onStateUpdate(it) }
@@ -40,11 +42,10 @@ class HomeFragment : Fragment() {
     ): View? {
         val v = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val rv = v.findViewById<RecyclerView>(R.id.h_rv_twitterpost)
-        rv.apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = newsAdapter
-        }
+        val viewPager = v.findViewById<ViewPager>(R.id.h_rv_news)
+        viewPager.pageMargin = 48
+        viewPager.adapter = newsAdapter;
+
         val fab = v.findViewById<ExtendedFloatingActionButton>(R.id.h_fab)
         fab.setOnClickListener {
             HomeAddActivityBottomSheetDialogFragment().show(parentFragmentManager, "bottom_sheet_add_activity")

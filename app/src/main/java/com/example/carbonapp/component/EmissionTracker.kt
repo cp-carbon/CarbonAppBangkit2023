@@ -14,7 +14,7 @@ class EmissionTracker @JvmOverloads
 
     init {
         val a = ctx.obtainStyledAttributes(attrs, R.styleable.EmissionTracker)
-        val backgroundColor = a.getColor(R.styleable.EmissionTracker_backgroundColor, android.R.color.white)
+        val backgroundColor = a.getColor(R.styleable.EmissionTracker_backgroundColor, resources.getColor(android.R.color.white, null))
         val timeLength = a.getString(R.styleable.EmissionTracker_timeLength)
         val emissionValue = a.getInt(R.styleable.EmissionTracker_emissionValue, 0)
         val progressPercentage = a.getFloat(R.styleable.EmissionTracker_progressPercentage, 0.0f)

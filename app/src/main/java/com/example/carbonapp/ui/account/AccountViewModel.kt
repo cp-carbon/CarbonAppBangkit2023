@@ -1,7 +1,7 @@
 package com.example.carbonapp.ui.account
 
 import androidx.lifecycle.ViewModel
-import com.example.carbonapp.data.LoginRepository
+import com.example.carbonapp.data.repository.LoginRepository
 
 class AccountViewModel : ViewModel() {
     // TODO: Complete the ViewModel

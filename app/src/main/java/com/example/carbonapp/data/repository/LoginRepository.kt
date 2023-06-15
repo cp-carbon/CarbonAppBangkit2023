@@ -1,8 +1,12 @@
-package com.example.carbonapp.data
+package com.example.carbonapp.data.repository
 
-import com.example.carbonapp.data.request.LoginRequest
+import com.example.carbonapp.data.HttpRequester
+import com.example.carbonapp.data.HttpResult
 import com.example.carbonapp.data.response.LoginResponse
 import com.example.carbonapp.`object`.LoggedInUser
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 /**
  * Class that requests authentication and user information from the remote data source and
@@ -29,21 +33,25 @@ class LoginRepository private constructor() {
         user = null
     }
 
-    fun login(email: String, password: String, callback: (Response<LoggedInUser>) -> Unit) {
-        try {
-            // TODO: Handle user authentication
-            val request = LoginRequest(email, password)
-            // simulate success login
-            val response = Response.Success(200, "success", LoginResponse("u-001", "token"))
-
-            if (response.code == 200) {
-                val fakeUser = LoggedInUser(response.data.userId, response.data.token, "John Doe", email)
-                setLoggedInUser(fakeUser)
-                callback(Response.Success(response.code, response.status, fakeUser))
+    fun login(email: String, password: String, callback: (HttpResult<LoggedInUser>) -> Unit) {
+        HttpRequester.api.login(email, password).enqueue(object : Callback<LoginResponse> {
+            override fun onResponse(
+                call: Call<LoginResponse>,
+                response: Response<LoginResponse>
+            ) {
+                if (response.code() == 200) {
+                    val user = LoggedInUser(response.body()!!.userId, response.body()!!.token, "John Doe", email)
+                    setLoggedInUser(user)
+                    callback(HttpResult.Success(user))
+                } else {
+                    callback(HttpResult.Error(Exception(response.errorBody()?.string())))
+                }
             }
-        } catch (e: Throwable) {
-            callback(Response.Error(0, "Connection Error", Exception(e)))
-        }
+
+            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                callback(HttpResult.Error(Exception(t)))
+            }
+        })
     }
 
     fun logout() {

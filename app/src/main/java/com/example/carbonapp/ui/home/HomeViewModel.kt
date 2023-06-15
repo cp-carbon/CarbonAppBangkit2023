@@ -1,8 +1,8 @@
 package com.example.carbonapp.ui.home
 
 import androidx.lifecycle.ViewModel
-import com.example.carbonapp.data.HomeRepository
-import com.example.carbonapp.data.Response
+import com.example.carbonapp.data.repository.HomeRepository
+import com.example.carbonapp.data.HttpResult
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -15,10 +15,26 @@ class HomeViewModel : ViewModel() {
     val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
 
     fun load() {
+        if (homeRepository.data != null) {
+            val data = homeRepository.data!!
+
+            _uiState.update {
+                it.copy(
+                    isLoading = false,
+                    hasError = false,
+                    todayEmission = data.todayEmission,
+                    travelActivities = data.travelActivities,
+                    news = data.news,
+                    products = data.products,
+                )
+            }
+            return
+        }
+
         _uiState.update { it.copy(isLoading = true) }
 
         homeRepository.fetchData { response ->
-            if (response is Response.Success) {
+            if (response is HttpResult.Success) {
                 _uiState.update {
                     it.copy(
                         isLoading = false,
@@ -30,7 +46,7 @@ class HomeViewModel : ViewModel() {
                     )
                 }
             }
-            if (response is Response.Error) {
+            if (response is HttpResult.Error) {
                 _uiState.update {
                     it.copy(
                         isLoading = false,

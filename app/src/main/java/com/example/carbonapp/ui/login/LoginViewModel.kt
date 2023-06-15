@@ -1,8 +1,8 @@
 package com.example.carbonapp.ui.login
 
 import androidx.lifecycle.ViewModel
-import com.example.carbonapp.data.LoginRepository
-import com.example.carbonapp.data.Response
+import com.example.carbonapp.data.HttpResult
+import com.example.carbonapp.data.repository.LoginRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -28,7 +28,7 @@ class LoginViewModel : ViewModel() {
 
         _uiState.update { it.copy(isLoading = true) }
         loginRepository.login(email, password) { result ->
-            if (result is Response.Success) {
+            if (result is HttpResult.Success) {
                 _uiState.update {
                     it.copy(
                         isLoading = false,
@@ -37,7 +37,7 @@ class LoginViewModel : ViewModel() {
                     )
                 }
             }
-            if (result is Response.Error) {
+            if (result is HttpResult.Error) {
                 _uiState.update {
                     it.copy(
                         isLoading = false,

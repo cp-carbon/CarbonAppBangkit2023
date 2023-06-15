@@ -1,8 +1,8 @@
 package com.example.carbonapp.data.response
 
-import com.example.carbonapp.data.Response
+import com.google.gson.annotations.SerializedName
 
 data class LoginResponse(
-    val userId: String,
+    @SerializedName("user_id") val userId: String,
     val token: String,
 )

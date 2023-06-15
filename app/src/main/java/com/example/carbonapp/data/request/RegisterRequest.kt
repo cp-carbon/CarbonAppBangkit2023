@@ -1,11 +1,13 @@
 package com.example.carbonapp.data.request
 
 import com.example.carbonapp.`object`.Vehicle
+import com.google.gson.annotations.SerializedName
 
 data class RegisterRequest(
-    var fullName: String = "",
+    @SerializedName("fullname") var fullName: String = "",
     var email: String = "",
     var password: String = "",
-    val transportPreferences: ArrayList<String> = ArrayList(),
-    var vehicle: Vehicle? = null,
+    @SerializedName("confirm_password") var rePassword: String = "",
+    @SerializedName("transport_preferences") val transportPreferences: ArrayList<String> = arrayListOf(),
+    val vehicles: ArrayList<Vehicle> = arrayListOf(),
 )

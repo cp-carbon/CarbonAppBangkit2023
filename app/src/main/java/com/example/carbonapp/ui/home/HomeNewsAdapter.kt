@@ -41,12 +41,12 @@ class HomeNewsAdapter : RecyclerView.Adapter<HomeNewsAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(data[position]) {
-            if (imageUrl != null) {
-                UrlImageLoader.load(imageUrl, holder.bgView)
+            if (backgroundImageUrl != null) {
+                UrlImageLoader.load(backgroundImageUrl, holder.bgView)
             }
-            holder.dateText.text = date
+            holder.dateText.text = publishedAt
             holder.titleText.text = title
-            holder.contentText.text = content
+            holder.contentText.text = description
         }
     }
 

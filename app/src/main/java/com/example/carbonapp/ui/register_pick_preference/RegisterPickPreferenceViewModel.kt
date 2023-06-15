@@ -1,7 +1,7 @@
 package com.example.carbonapp.ui.register_pick_preference
 
 import androidx.lifecycle.ViewModel
-import com.example.carbonapp.data.RegisterRepository
+import com.example.carbonapp.data.repository.RegisterRepository
 
 class RegisterPickPreferenceViewModel : ViewModel() {
 

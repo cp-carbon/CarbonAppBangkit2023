@@ -1,9 +1,9 @@
 package com.example.carbonapp.data.response
 
 import com.example.carbonapp.`object`.TravelStats
+import com.google.gson.annotations.SerializedName
 
 data class MyActivityResponse(
-    val averageEmission: Int,
-    val emissionGenerated: List<Int>,
-    val travelStats: TravelStats,
+    @SerializedName("average_emission") val averageEmission: Int,
+    @SerializedName("travel_stats") val travelStats: TravelStats,
 )

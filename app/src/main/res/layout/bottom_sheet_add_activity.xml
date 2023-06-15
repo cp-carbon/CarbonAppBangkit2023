@@ -4,20 +4,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="8dp">
-
+    android:background="@color/dark_grey"
+    android:paddingTop="12dp"
+    android:paddingHorizontal="16dp">
+    
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center"
+        android:src="@drawable/sheet_rounded_rec"/>
+    
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="16dp"
-        android:text="@string/home_choose_activity" />
+        android:text="@string/home_choose_activity"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/white"/>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/bsad_eating_option"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        app:contentPadding="12dp">
+        android:layout_height="77dp"
+        android:layout_marginBottom="8dp"
+        app:contentPadding="18dp"
+        app:cardCornerRadius="12dp"
+        app:strokeWidth=".5dp"
+        app:strokeColor="@color/light_grey"
+        android:elevation="0dp"
+        android:backgroundTint="@color/dark_grey"
+        android:background="@drawable/select_activity">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,22 +46,33 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/home_activity_eating" />
+                android:text="@string/home_activity_eating"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/home_activity_eating_detail" />
+                android:text="@string/home_activity_eating_detail"
+                android:textSize="12sp"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/bsad_traveling_option"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        app:contentPadding="12dp">
+        android:layout_height="77dp"
+        android:layout_marginBottom="8dp"
+        app:contentPadding="18dp"
+        app:cardCornerRadius="12dp"
+        app:strokeWidth=".5dp"
+        app:strokeColor="@color/light_grey"
+        android:elevation="0dp"
+        android:backgroundTint="@color/dark_grey"
+        android:background="@drawable/select_activity">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,22 +82,33 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/home_activity_traveling" />
+                android:text="@string/home_activity_traveling"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/home_activity_traveling_detail" />
+                android:text="@string/home_activity_traveling_detail"
+                android:textSize="12sp"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/bsad_custom_option"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="77dp"
         android:layout_marginBottom="4dp"
-        app:contentPadding="12dp">
+        app:contentPadding="18dp"
+        app:cardCornerRadius="12dp"
+        app:strokeWidth=".5dp"
+        app:strokeColor="@color/light_grey"
+        android:elevation="0dp"
+        android:backgroundTint="@color/dark_grey"
+        android:background="@drawable/select_activity">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -77,14 +118,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/home_activity_custom" />
+                android:text="@string/home_activity_custom"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/home_activity_custom_detail" />
+                android:text="@string/home_activity_custom_detail"
+                android:textSize="12sp"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

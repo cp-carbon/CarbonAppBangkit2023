@@ -65,4 +65,7 @@ dependencies {
     // Material Design
     implementation 'com.google.android.material:material:1.3.0-alpha02'
 
+    // retrofit Http requester
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
 }

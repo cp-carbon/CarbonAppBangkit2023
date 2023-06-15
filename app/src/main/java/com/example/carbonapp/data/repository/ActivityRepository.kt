@@ -7,7 +7,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ActivityRepository {
+class ActivityRepository private constructor() {
 
     companion object {
         val instance: ActivityRepository by lazy { ActivityRepository() }
@@ -28,6 +28,7 @@ class ActivityRepository {
         HttpRequester.api.myActivity(token, userId).enqueue(object : Callback<MyActivityResponse> {
             override fun onResponse(call: Call<MyActivityResponse>, response: Response<MyActivityResponse>) {
                 if (response.code() == 200) {
+                    data = response.body()
                     callback(HttpResult.Success(response.body()!!))
                 } else {
                     println(response.errorBody())

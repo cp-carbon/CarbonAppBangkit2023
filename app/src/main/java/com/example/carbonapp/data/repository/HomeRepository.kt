@@ -7,7 +7,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class HomeRepository {
+class HomeRepository private constructor() {
 
     companion object {
         val instance: HomeRepository by lazy { HomeRepository() }
@@ -28,6 +28,7 @@ class HomeRepository {
         HttpRequester.api.home(token, userId).enqueue(object : Callback<HomeResponse> {
             override fun onResponse(call: Call<HomeResponse>, response: Response<HomeResponse>) {
                 if (response.code() == 200) {
+                    data = response.body()
                     callback(HttpResult.Success(response.body()!!))
                 } else {
                     println(response.errorBody())

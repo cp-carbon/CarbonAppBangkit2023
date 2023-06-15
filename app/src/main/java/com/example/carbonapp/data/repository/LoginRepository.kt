@@ -54,12 +54,33 @@ class LoginRepository private constructor() {
         })
     }
 
-    fun logout() {
-        user = null
+    fun logout(callback: (HttpResult<Boolean>) -> Unit) {
+        if (user == null) {
+            callback(HttpResult.Success(true))
+            return
+        }
 
-        // TODO: Delete user credentials in shared preferences
-        // If user credentials will be cached in local storage, it is recommended it be encrypted
-        // @see https://developer.android.com/training/articles/keystore
+        HttpRequester.api.logout(user!!.token).enqueue(object : Callback<Nothing> {
+            override fun onResponse(
+                call: Call<Nothing>,
+                response: Response<Nothing>
+            ) {
+                if (response.code() == 200) {
+                    // TODO: Delete user credentials in shared preferences
+                    // If user credentials will be cached in local storage, it is recommended it be encrypted
+                    // @see https://developer.android.com/training/articles/keystore
+                    user = null
+
+                    callback(HttpResult.Success(true))
+                } else {
+                    callback(HttpResult.Error(Exception(response.errorBody()?.string())))
+                }
+            }
+
+            override fun onFailure(call: Call<Nothing>, t: Throwable) {
+                callback(HttpResult.Error(Exception(t)))
+            }
+        })
     }
 
     private fun setLoggedInUser(loggedInUser: LoggedInUser) {

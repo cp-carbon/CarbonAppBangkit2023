@@ -48,7 +48,7 @@ class RegisterFragment : Fragment() {
             return
         }
 
-        viewModel.save(fullName, email, password)
+        viewModel.save(fullName, email, password, confirmPassword)
         navigateToRegisterPickPreference()
     }
 

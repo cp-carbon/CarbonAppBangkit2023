@@ -9,6 +9,7 @@ import com.example.carbonapp.data.response.MyActivityResponse
 import com.example.carbonapp.data.response.RegisterResponse
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -20,6 +21,9 @@ sealed interface API {
     @FormUrlEncoded
     @POST("/signin")
     fun login(@Field("email") email: String, @Field("password") password: String) : Call<LoginResponse>
+
+    @DELETE("/logout")
+    fun logout(@Header("token") token: String) : Call<Nothing>
 
     @POST("/signup")
     fun register(@Body registerRequest: RegisterRequest) : Call<RegisterResponse>

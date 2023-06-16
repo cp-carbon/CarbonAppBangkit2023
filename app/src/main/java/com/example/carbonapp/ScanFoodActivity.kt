@@ -1,5 +1,6 @@
 package com.example.carbonapp
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.PackageManager
@@ -20,6 +21,7 @@ import android.view.Surface
 import android.view.TextureView
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.carbonapp.ml.SsdMobilenetV11Metadata1
 import org.tensorflow.lite.support.common.FileUtil
@@ -53,14 +55,14 @@ class ScanFoodActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scan_food)
 
-        getPermission()
-
         labels = FileUtil.loadLabels(this, "mobilenet_objectdetection_labels.txt")
         imageProcessor = ImageProcessor.Builder().add(ResizeOp(300, 300, ResizeOp.ResizeMethod.BILINEAR)).build()
         model = SsdMobilenetV11Metadata1.newInstance(this)
         val handlerThread = HandlerThread("videoThread")
         handlerThread.start()
         handler = Handler(handlerThread.looper)
+
+        objectName = findViewById(R.id.sfObjectTitle)
 
         cameraView = findViewById(R.id.sfCameraView)
 
@@ -126,8 +128,16 @@ class ScanFoodActivity : AppCompatActivity() {
         model.close()
     }
 
-    @SuppressLint("MissingPermission")
     fun open_camera(){
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.CAMERA
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            getPermission()
+            return
+        }
+
         cameraManager.openCamera(cameraManager.cameraIdList[0], object:CameraDevice.StateCallback(){
             override fun onOpened(p0: CameraDevice) {
                 cameraDevice = p0
@@ -158,8 +168,8 @@ class ScanFoodActivity : AppCompatActivity() {
     }
 
     private fun getPermission(){
-        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-            requestPermissions(arrayOf(android.Manifest.permission.CAMERA), 101)
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            requestPermissions(arrayOf(Manifest.permission.CAMERA), 101)
         }
     }
 
@@ -169,8 +179,9 @@ class ScanFoodActivity : AppCompatActivity() {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (grantResults[0] != PackageManager.PERMISSION_GRANTED){
-            getPermission()
+        when(grantResults[0]) {
+            PackageManager.PERMISSION_GRANTED -> open_camera()
+            else -> finish()
         }
     }
 

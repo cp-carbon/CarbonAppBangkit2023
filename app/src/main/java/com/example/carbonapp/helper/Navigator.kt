@@ -23,7 +23,7 @@ class Navigator {
     companion object {
 
         fun toHomeActivity(activity: Activity) {
-            val intent = Intent(activity, HomeActivity().javaClass)
+            val intent = Intent(activity, HomeActivity::class.java)
             with(activity) {
                 startActivity(intent)
                 finish()
@@ -31,10 +31,17 @@ class Navigator {
         }
 
         fun toLoginActivity(activity: Activity) {
-            val intent = Intent(activity, LoginActivity().javaClass)
+            val intent = Intent(activity, LoginActivity::class.java)
             with(activity) {
                 startActivity(intent)
                 finish()
+            }
+        }
+
+        fun toScanFoodActivity(activity: Activity) {
+            val intent = Intent(activity, ScanFoodActivity::class.java)
+            with(activity) {
+                startActivity(intent)
             }
         }
 

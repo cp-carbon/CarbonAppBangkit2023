@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import com.example.carbonapp.R
+import com.example.carbonapp.helper.Navigator
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class HomeAddActivityBottomSheetDialogFragment : BottomSheetDialogFragment() {
@@ -19,8 +20,7 @@ class HomeAddActivityBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
         val eatingOption = v.findViewById<CardView>(R.id.bsad_eating_option)
         eatingOption.setOnClickListener {
-            // TODO: Handle on select eating
-
+            Navigator.toScanFoodActivity(requireActivity())
         }
         val travelingOption = v.findViewById<CardView>(R.id.bsad_traveling_option)
         travelingOption.setOnClickListener {

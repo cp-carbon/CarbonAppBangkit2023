@@ -1,0 +1,174 @@
+[
+ {
+   "product": "Wheat & Rye (Bread)",
+   "emissions": "1.4000000000000004"
+ },
+ {
+   "product": "Maize (Meal)",
+   "emissions": "1.1"
+ },
+ {
+   "product": "Barley (Beer)",
+   "emissions": "1.1"
+ },
+ {
+   "product": "Oatmeal",
+   "emissions": "1.6"
+ },
+ {
+   "product": "Rice",
+   "emissions": "4.0"
+ },
+ {
+   "product": "Potatoes",
+   "emissions": "0.30000000000000004"
+ },
+ {
+   "product": "Cassava",
+   "emissions": "0.9"
+ },
+ {
+   "product": "Cane Sugar",
+   "emissions": "2.6"
+ },
+ {
+   "product": "Beet Sugar",
+   "emissions": "1.4"
+ },
+ {
+   "product": "Other Pulses",
+   "emissions": "1.6"
+ },
+ {
+   "product": "Peas",
+   "emissions": "0.7999999999999999"
+ },
+ {
+   "product": "Nuts",
+   "emissions": "0.2"
+ },
+ {
+   "product": "Groundnuts",
+   "emissions": "2.4"
+ },
+ {
+   "product": "Soymilk",
+   "emissions": "1.0"
+ },
+ {
+   "product": "Tofu",
+   "emissions": "3.0"
+ },
+ {
+   "product": "Soybean Oil",
+   "emissions": "5.999999999999999"
+ },
+ {
+   "product": "Palm Oil",
+   "emissions": "7.6000000000000005"
+ },
+ {
+   "product": "Sunflower Oil",
+   "emissions": "3.5000000000000004"
+ },
+ {
+   "product": "Rapeseed Oil",
+   "emissions": "3.7"
+ },
+ {
+   "product": "Olive Oil",
+   "emissions": "6.0"
+ },
+ {
+   "product": "Tomatoes",
+   "emissions": "1.4000000000000001"
+ },
+ {
+   "product": "Onions & Leeks",
+   "emissions": "0.30000000000000004"
+ },
+ {
+   "product": "Root Vegetables",
+   "emissions": "0.30000000000000004"
+ },
+ {
+   "product": "Brassicas",
+   "emissions": "0.4"
+ },
+ {
+   "product": "Other Vegetables",
+   "emissions": "0.5"
+ },
+ {
+   "product": "Citrus Fruit",
+   "emissions": "0.3"
+ },
+ {
+   "product": "Bananas",
+   "emissions": "0.7999999999999999"
+ },
+ {
+   "product": "Apples",
+   "emissions": "0.30000000000000004"
+ },
+ {
+   "product": "Berries & Grapes",
+   "emissions": "1.0999999999999999"
+ },
+ {
+   "product": "Wine",
+   "emissions": "1.4"
+ },
+ {
+   "product": "Other Fruit",
+   "emissions": "0.7"
+ },
+ {
+   "product": "Coffee",
+   "emissions": "16.500000000000004"
+ },
+ {
+   "product": "Dark Chocolate",
+   "emissions": "18.7"
+ },
+ {
+   "product": "Beef (beef herd)",
+   "emissions": "59.599999999999994"
+ },
+ {
+   "product": "Beef (dairy herd)",
+   "emissions": "21.099999999999998"
+ },
+ {
+   "product": "Lamb & Mutton",
+   "emissions": "24.5"
+ },
+ {
+   "product": "Pig Meat",
+   "emissions": "7.2"
+ },
+ {
+   "product": "Poultry Meat",
+   "emissions": "6.1000000000000005"
+ },
+ {
+   "product": "Milk",
+   "emissions": "2.8000000000000003"
+ },
+ {
+   "product": "Cheese",
+   "emissions": "21.2"
+ },
+ {
+   "product": "Eggs",
+   "emissions": "4.5"
+ },
+ {
+   "product": "Fish (farmed)",
+   "emissions": "5.1"
+ },
+ {
+   "product": "Shrimps (farmed)",
+   "emissions": "11.8"
+ }
+]

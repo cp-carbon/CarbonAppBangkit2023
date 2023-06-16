@@ -20,6 +20,7 @@ class HomeAddActivityBottomSheetDialogFragment : BottomSheetDialogFragment() {
         val eatingOption = v.findViewById<CardView>(R.id.bsad_eating_option)
         eatingOption.setOnClickListener {
             // TODO: Handle on select eating
+
         }
         val travelingOption = v.findViewById<CardView>(R.id.bsad_traveling_option)
         travelingOption.setOnClickListener {

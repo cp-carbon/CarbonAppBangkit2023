@@ -60,10 +60,10 @@ class LoginRepository private constructor() {
             return
         }
 
-        HttpRequester.api.logout(user!!.token).enqueue(object : Callback<Nothing> {
+        HttpRequester.api.logout(user!!.token).enqueue(object : Callback<Any?> {
             override fun onResponse(
-                call: Call<Nothing>,
-                response: Response<Nothing>
+                call: Call<Any?>,
+                response: Response<Any?>
             ) {
                 if (response.code() == 200) {
                     // TODO: Delete user credentials in shared preferences
@@ -77,7 +77,7 @@ class LoginRepository private constructor() {
                 }
             }
 
-            override fun onFailure(call: Call<Nothing>, t: Throwable) {
+            override fun onFailure(call: Call<Any?>, t: Throwable) {
                 callback(HttpResult.Error(Exception(t)))
             }
         })

@@ -81,6 +81,7 @@
     <string name="home_news_date">UNDP Climate - May 7</string>
     <string name="home_news_title">Small green business are crucial for the low-carbon…</string>
     <string name="home_news_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu laoreet diam. Aenean rhoncus dui nec arcu sodales scelerisque.</string>
+    <string name="home_products_header">Gear up your journey</string>
     <string name="home_action_add_activity">Add Activity</string>
     <string name="home_choose_activity">Choose Activity</string>
     <string name="home_activity_eating">I\'m eating/drinking</string>
@@ -91,9 +92,9 @@
     <string name="home_activity_custom_detail">Tell us what you are up to</string>
 
     <string name="emission_generated">Emission Generated</string>
-    <string name="min_travel_distance">Minimum travel distance <font color="#FFFFFF">%1$dm</font></string>
+    <string name="min_travel_distance">Minimum travel distance &lt;font color="#FFFFFF">%1$dm&lt;/font></string>
     <string name="statistics">Statistics</string>
-    <string name="travel_distance_km">%1$dkm</string>
+    <string name="travel_distance_km">%1$d km</string>
     <string name="travel_by_walk">Travel by walk</string>
     <string name="travel_by_bike">Travel by bike</string>
     <string name="travel_by_car">Travel by car</string>

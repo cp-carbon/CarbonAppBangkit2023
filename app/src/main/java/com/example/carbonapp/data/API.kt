@@ -23,7 +23,7 @@ sealed interface API {
     fun login(@Field("email") email: String, @Field("password") password: String) : Call<LoginResponse>
 
     @DELETE("/logout")
-    fun logout(@Header("token") token: String) : Call<Nothing>
+    fun logout(@Header("token") token: String) : Call<Any?>
 
     @POST("/signup")
     fun register(@Body registerRequest: RegisterRequest) : Call<RegisterResponse>

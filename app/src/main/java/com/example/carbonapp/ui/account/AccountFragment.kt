@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -13,6 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.carbonapp.HomeOnNavigationItemSelected
 import com.example.carbonapp.R
+import com.example.carbonapp.component.EmissionTrackerView
 import com.example.carbonapp.helper.Navigator
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.launch
@@ -21,6 +23,9 @@ import kotlinx.coroutines.launch
 class AccountFragment : Fragment() {
 
     private lateinit var viewModel: AccountViewModel
+    private lateinit var emissionTrackerView: EmissionTrackerView
+    private lateinit var nameView: TextView
+    private lateinit var emailView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +42,10 @@ class AccountFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val v = inflater.inflate(R.layout.fragment_account, container, false)
+
+        emissionTrackerView = v.findViewById(R.id.a_emission_tracker)
+        nameView = v.findViewById(R.id.a_toolbar_name)
+        emailView = v.findViewById(R.id.a_toolbar_email)
 
         val logoutButton = v.findViewById<Button>(R.id.a_logout)
         logoutButton.setOnClickListener { viewModel.logout() }
@@ -70,6 +79,10 @@ class AccountFragment : Fragment() {
             navigateToLoginActivity()
             return
         }
+
+        emissionTrackerView.emissionValue = state.averageEmission
+        nameView.text = state.profile!!.fullname
+        emailView.text = state.profile.email
     }
 
     private fun navigateToLoginActivity() {

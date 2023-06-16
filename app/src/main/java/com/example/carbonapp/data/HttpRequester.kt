@@ -9,9 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 class HttpRequester {
 
     companion object {
-        // TODO: change url to production
-        //private const val BASE_URL = "https://cp-carbon.et.r.appspot.com"
-        private const val BASE_URL = "https://d1b8-2001-448a-6000-b802-689f-9984-bf46-9c3.ngrok-free.app"
+        private const val BASE_URL = "https://cp-carbon.et.r.appspot.com"
+        //private const val BASE_URL = "https://d1b8-2001-448a-6000-b802-689f-9984-bf46-9c3.ngrok-free.app"
 
         private fun client(): OkHttpClient {
             val interceptor = HttpLoggingInterceptor()

@@ -9,19 +9,18 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.viewpager.widget.PagerAdapter
 import com.example.carbonapp.R
+import com.example.carbonapp.enum.MonthShort
 import com.example.carbonapp.helper.UrlImageLoader
 import com.example.carbonapp.`object`.News
 import java.util.Objects
 
 class HomeNewsAdapter(private val ctx : Context) : PagerAdapter() {
 
-    private val data = ArrayList<News>()
-
-    fun updateData(posts: ArrayList<News>) {
-        data.clear()
-        data.addAll(posts)
-        notifyDataSetChanged()
-    }
+    var data = ArrayList<News>()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
     override fun getCount(): Int {
         return data.size
@@ -47,10 +46,15 @@ class HomeNewsAdapter(private val ctx : Context) : PagerAdapter() {
         val contentText : TextView = itemView.findViewById(R.id.vh_htp_content)
 
         with(data[position]) {
+            val date = publishedAt.split("T")[0].split("-")
+            val day = date[2]
+            val month = MonthShort.values()[date[1].toIntOrNull() ?: 0]
+            val formattedDate = "$month $day"
+
             if (backgroundImageUrl != null) {
                 UrlImageLoader.load(backgroundImageUrl, bgView)
             }
-            dateText.text = "$author - $publishedAt"
+            dateText.text = "$author - $formattedDate"
             titleText.text = title
             contentText.text = description
         }

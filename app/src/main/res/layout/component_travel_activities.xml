@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/home_travel_activities"
+            android:textColor="@color/light_grey"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_walk_white" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/cta_walk_progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="50"
+                app:trackCornerRadius="3dp"
+                app:trackThickness="6dp" />
+
+            <TextView
+                android:id="@+id/cta_walk_text"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="@string/km_8"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bike_white" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/cta_bike_progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="50"
+                app:trackCornerRadius="3dp"
+                app:trackThickness="6dp" />
+
+            <TextView
+                android:id="@+id/cta_bike_text"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="@string/km_8"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_car_white" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/cta_car_progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="50"
+                app:trackCornerRadius="3dp"
+                app:trackThickness="6dp" />
+
+            <TextView
+                android:id="@+id/cta_car_text"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="@string/km_8"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_train_white" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/cta_public_trans_progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="50"
+                app:trackCornerRadius="3dp"
+                app:trackThickness="6dp" />
+
+            <TextView
+                android:id="@+id/cta_public_trans_text"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="@string/km_8"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</merge>

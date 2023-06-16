@@ -8,8 +8,6 @@
     android:fitsSystemWindows="true"
     tools:context=".ui.account.AccountFragment">
 
-    <!-- TODO: This layout needs styling -->
-
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,6 +40,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/a_toolbar_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/placeholder_name"
@@ -50,6 +49,7 @@
                         android:textColor="@color/white"/>
 
                     <TextView
+                        android:id="@+id/a_toolbar_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/placeholder_email"
@@ -76,18 +76,17 @@
             android:paddingTop="12dp"
             android:paddingBottom="80dp">
 
-            <com.example.carbonapp.component.EmissionTracker
+            <com.example.carbonapp.component.EmissionTrackerView
+                android:id="@+id/a_emission_tracker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:contentPadding="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:progressPercentage="0.5"
-                app:timeLength="today"
-                app:emissionValue="1000" >
+                app:timeLength="all_time">
 
-            </com.example.carbonapp.component.EmissionTracker>
+            </com.example.carbonapp.component.EmissionTrackerView>
 
             <TextView
                 android:id="@+id/textView7"

@@ -21,7 +21,7 @@ class RegisterViewModel : ViewModel() {
         return null
     }
 
-    fun save(fullName: String, email: String, password: String) {
-        registerRepository.setBasicInformation(fullName, email, password)
+    fun save(fullName: String, email: String, password: String, confirmPassword: String) {
+        registerRepository.setBasicInformation(fullName, email, password, confirmPassword)
     }
 }

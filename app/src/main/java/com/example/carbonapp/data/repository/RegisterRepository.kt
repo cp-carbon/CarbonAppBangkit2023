@@ -26,12 +26,14 @@ class RegisterRepository private constructor() {
         get() = registerRequest.fullName.isNotBlank()
                 && registerRequest.email.isNotBlank()
                 && registerRequest.password.isNotBlank()
+                && registerRequest.rePassword.isNotBlank()
 
-    fun setBasicInformation(fullName: String, email: String, password: String) {
+    fun setBasicInformation(fullName: String, email: String, password: String, rePassword: String) {
         registerRequest.apply {
             this.fullName = fullName
             this.email = email
             this.password = password
+            this.rePassword = rePassword
         }
     }
 

@@ -50,7 +50,7 @@ class RegisterBeginJourneyFragment : Fragment() {
         if (state.isSuccessRegister) {
             navigateToMainActivity()
         } else if (state.errorMessage != null) {
-            Toast.makeText(context, resources.getString(R.string.loading), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, state.errorMessage, Toast.LENGTH_SHORT).show()
         }
     }
 

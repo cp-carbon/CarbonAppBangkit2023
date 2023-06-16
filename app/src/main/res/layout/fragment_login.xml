@@ -107,7 +107,7 @@
         android:background="@drawable/google_signin_button_background"
         android:drawableLeft="@drawable/google_icon"
         android:paddingHorizontal="24dp"
-        android:enabled="true"
+        android:enabled="false"
         android:text="@string/action_sign_in_google"
         android:textStyle="bold"
         android:textSize="16sp"

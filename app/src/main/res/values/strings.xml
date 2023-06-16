@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CarbonApp</string>
+    <string name="app_name">Carbon</string>
     <string name="company_name">Carbon</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -90,6 +90,8 @@
     <string name="home_activity_custom">Other</string>
     <string name="home_activity_custom_detail">Tell us what you are up to</string>
 
+    <string name="confirm">Confirm</string>
+
     <string name="emission_generated">Emission Generated</string>
     <string name="min_travel_distance">Minimum travel distance <font color="#FFFFFF">%1$dm</font></string>
     <string name="statistics">Statistics</string>
@@ -103,4 +105,7 @@
     <string name="general">General</string>
     <string name="opt_live_location">Live location</string>
     <string name="opt_manage_permission">Manage permission</string>
+
+    <string name="scan_object_waiting">Waiting for object...</string>
+    <string name="scan_object_info">No information available</string>
 </resources>

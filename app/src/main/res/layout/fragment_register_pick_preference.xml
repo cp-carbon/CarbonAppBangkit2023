@@ -46,6 +46,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
+        android:clickable="true"
         app:chipSpacingHorizontal="12dp"
         app:flow_horizontalAlign="center"
         app:flow_verticalAlign="center"
@@ -59,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
-            android:backgroundTint="#333333"
+            app:chipBackgroundColor="#333333"
             android:textColor="@color/white"
             android:text="@string/car" />
 
@@ -68,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
-            android:backgroundTint="#333333"
+            app:chipBackgroundColor="#333333"
             android:textColor="@color/white"
             android:text="@string/motorcycle" />
 
@@ -77,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
-            android:backgroundTint="#333333"
+            app:chipBackgroundColor="#333333"
             android:textColor="@color/white"
             android:text="@string/public_transport" />
 
@@ -86,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
-            android:backgroundTint="#333333"
+            app:chipBackgroundColor="#333333"
             android:textColor="@color/white"
             android:text="@string/bike" />
 
@@ -95,7 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
-            android:backgroundTint="#333333"
+            app:chipBackgroundColor="#333333"
             android:textColor="@color/white"
             android:text="@string/uber" />
 

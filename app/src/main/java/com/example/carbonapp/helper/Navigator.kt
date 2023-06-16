@@ -3,10 +3,12 @@ package com.example.carbonapp.helper
 import android.app.Activity
 import android.content.Intent
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.carbonapp.HomeActivity
 import com.example.carbonapp.LoginActivity
 import com.example.carbonapp.R
+import com.example.carbonapp.ScanFoodActivity
 import com.example.carbonapp.ui.account.AccountFragment
 import com.example.carbonapp.ui.home.HomeFragment
 import com.example.carbonapp.ui.login.LoginFragment

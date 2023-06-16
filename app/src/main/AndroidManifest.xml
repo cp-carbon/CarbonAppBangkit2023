@@ -5,10 +5,11 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" /> <!-- TODO: Add both activity recognition permissions to the manifest. -->
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +19,19 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.CarbonApp"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+
+        <receiver
+            android:name=".library.activity_recognition.ActivityRecognitionReceiver"
+            android:enabled="true"
+            android:exported="false" >
+        </receiver>
+
+        <service
+            android:name=".library.activity_recognition.ActivityRecognitionService"
+            android:enabled="true"
+            android:exported="false" />
+
         <activity
             android:name=".ScanFoodActivity"
             android:exported="false" >

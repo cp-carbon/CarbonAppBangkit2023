@@ -3,11 +3,13 @@ package com.example.carbonapp.data.repository
 import com.example.carbonapp.data.HttpRequester
 import com.example.carbonapp.data.HttpResult
 import com.example.carbonapp.data.request.RegisterRequest
+import com.example.carbonapp.data.response.RegisterGetVehiclesResponse
 import com.example.carbonapp.data.response.RegisterResponse
 import com.example.carbonapp.`object`.LoggedInUser
 import com.example.carbonapp.`object`.Vehicle
 import retrofit2.Call
 import retrofit2.Callback
+import retrofit2.Response
 
 class RegisterRepository private constructor() {
 
@@ -52,6 +54,28 @@ class RegisterRepository private constructor() {
         registerRequest = RegisterRequest()
     }
 
+    fun fetchVehicles(callback: (HttpResult<List<Vehicle>>) -> Unit) {
+        HttpRequester.api.registerGetVehicles().enqueue(object : Callback<RegisterGetVehiclesResponse> {
+            override fun onResponse(
+                call: Call<RegisterGetVehiclesResponse>,
+                response: Response<RegisterGetVehiclesResponse>
+            ) {
+                if (response.code() == 201) {
+                    val data = response.body()!!.vehicles.map {
+                        Vehicle(it.brand, it.className, it.model)
+                    }
+                    callback(HttpResult.Success(data))
+                } else {
+                    callback(HttpResult.Error(Exception(response.errorBody()?.string())))
+                }
+            }
+
+            override fun onFailure(call: Call<RegisterGetVehiclesResponse>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+    }
+
     fun register(callback: (HttpResult<LoggedInUser>) -> Unit) {
         if (!isBasicInformationFilled) {
             callback(HttpResult.Error(Exception("Fill basic information first!")))
@@ -61,7 +85,7 @@ class RegisterRepository private constructor() {
         HttpRequester.api.register(request).enqueue(object : Callback<RegisterResponse> {
             override fun onResponse(
                 call: Call<RegisterResponse>,
-                response: retrofit2.Response<RegisterResponse>
+                response: Response<RegisterResponse>
             ) {
                 if (response.code() == 201) {
                     loginRepository.login(request.email, request.password) {
@@ -80,4 +104,6 @@ class RegisterRepository private constructor() {
             }
         })
     }
+
+
 }

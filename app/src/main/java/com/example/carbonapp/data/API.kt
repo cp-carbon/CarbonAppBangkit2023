@@ -6,6 +6,7 @@ import com.example.carbonapp.data.response.AccountResponse
 import com.example.carbonapp.data.response.HomeResponse
 import com.example.carbonapp.data.response.LoginResponse
 import com.example.carbonapp.data.response.MyActivityResponse
+import com.example.carbonapp.data.response.RegisterGetVehiclesResponse
 import com.example.carbonapp.data.response.RegisterResponse
 import retrofit2.Call
 import retrofit2.http.Body
@@ -27,6 +28,9 @@ sealed interface API {
 
     @POST("/signup")
     fun register(@Body registerRequest: RegisterRequest) : Call<RegisterResponse>
+
+    @GET("/signup/vehicles")
+    fun registerGetVehicles() : Call<RegisterGetVehiclesResponse>
 
     @GET("/{user_id}/home")
     fun home(@Header("token") token: String, @Path("user_id") userId: String) : Call<HomeResponse>

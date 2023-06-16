@@ -12,10 +12,7 @@ class ActivityRecognitionReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         if (ActivityTransitionResult.hasResult(intent)) {
             val result = ActivityTransitionResult.extractResult(intent)!!
-            /*for (event in result.transitionEvents) {
-            }*/
             val event = result.transitionEvents[0]
-            println("ACTIVITY TYPE: ${event.activityType} - TRANSITION TYPE: ${event.transitionType}")
 
             val sIntent = Intent(intent.getStringExtra("filter"))
             sIntent.putExtra("activity", event.activityType)

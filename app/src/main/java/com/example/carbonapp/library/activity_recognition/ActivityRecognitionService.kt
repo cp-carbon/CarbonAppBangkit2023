@@ -23,8 +23,9 @@ class ActivityRecognitionService : Service() {
         MonitoredActivity(DetectedActivity.IN_VEHICLE, ActivityTransition.ACTIVITY_TRANSITION_ENTER),
         MonitoredActivity(DetectedActivity.ON_BICYCLE, ActivityTransition.ACTIVITY_TRANSITION_ENTER),
         MonitoredActivity(DetectedActivity.ON_FOOT, ActivityTransition.ACTIVITY_TRANSITION_ENTER),
+        MonitoredActivity(DetectedActivity.WALKING, ActivityTransition.ACTIVITY_TRANSITION_ENTER),
+        MonitoredActivity(DetectedActivity.RUNNING, ActivityTransition.ACTIVITY_TRANSITION_ENTER),
         MonitoredActivity(DetectedActivity.STILL, ActivityTransition.ACTIVITY_TRANSITION_ENTER),
-        MonitoredActivity(DetectedActivity.UNKNOWN, ActivityTransition.ACTIVITY_TRANSITION_ENTER),
     )
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {

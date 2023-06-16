@@ -1,7 +1,6 @@
 package com.example.carbonapp.ui.home
 
 import android.Manifest
-import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -17,7 +16,6 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -30,10 +28,7 @@ import com.example.carbonapp.HomeOnNavigationItemSelected
 import com.example.carbonapp.R
 import com.example.carbonapp.component.EmissionTrackerView
 import com.example.carbonapp.component.TravelActivitiesView
-import com.example.carbonapp.library.activity_recognition.ActivityRecognitionReceiver
-import com.google.android.gms.location.ActivityTransition
-import com.google.android.gms.location.ActivityTransitionRequest
-import com.google.android.gms.location.DetectedActivity
+import com.example.carbonapp.library.activity_recognition.ActivityRecognitionService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import kotlinx.coroutines.launch
@@ -88,8 +83,8 @@ class HomeFragment : Fragment() {
 
         val fab = v.findViewById<ExtendedFloatingActionButton>(R.id.h_fab)
         fab.setOnClickListener {
-            //HomeAddActivityBottomSheetDialogFragment().show(parentFragmentManager, "bottom_sheet_add_activity")
-            openDialog()
+            HomeAddActivityBottomSheetDialogFragment().show(parentFragmentManager, "bottom_sheet_add_activity")
+            //openActivitiesDialog()
         }
 
         return v
@@ -104,7 +99,9 @@ class HomeFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         viewModel.load()
-        startServices()
+
+        // TODO: uncomment this code to start testing activity recognition, and use openActivitiesDialog() function to show it's results
+        //startServices()
     }
 
     private fun onStateUpdate(state: HomeUiState) {
@@ -133,7 +130,7 @@ class HomeFragment : Fragment() {
         productAdapter.data = state.products
     }
 
-    private fun openDialog() {
+    private fun openActivitiesDialog() {
         val dialog = AlertDialog.Builder(requireContext())
         dialog.apply {
             setTitle("Activity History")
@@ -164,10 +161,9 @@ class HomeFragment : Fragment() {
         if (!isPermitted()) return
 
         val activityRecognitionFilter = "${requireContext().packageName}.Home.ActivityRecognition"
-        //val activityRecognitionIntent = Intent(requireContext(), ActivityRecognitionService::class.java)
-        //activityRecognitionIntent.putExtra("filter", activityRecognitionFilter)
-        //requireContext().startService(activityRecognitionIntent)
-        ActivityRecognition(requireContext(), activityRecognitionFilter).setupActivityRecognition()
+        val activityRecognitionIntent = Intent(requireContext(), ActivityRecognitionService::class.java)
+        activityRecognitionIntent.putExtra("filter", activityRecognitionFilter)
+        requireContext().startService(activityRecognitionIntent)
 
         LocalBroadcastManager.getInstance(requireContext()).registerReceiver(
             object : BroadcastReceiver() {
@@ -183,58 +179,4 @@ class HomeFragment : Fragment() {
             IntentFilter(activityRecognitionFilter)
         )
     }
-
-    inner class ActivityRecognition(private val context: Context, private val filter: String) {
-
-        private val monitoredActivities = listOf(
-            MonitoredActivity(DetectedActivity.IN_VEHICLE, ActivityTransition.ACTIVITY_TRANSITION_ENTER),
-            MonitoredActivity(DetectedActivity.ON_BICYCLE, ActivityTransition.ACTIVITY_TRANSITION_ENTER),
-            MonitoredActivity(DetectedActivity.ON_FOOT, ActivityTransition.ACTIVITY_TRANSITION_ENTER),
-            MonitoredActivity(DetectedActivity.STILL, ActivityTransition.ACTIVITY_TRANSITION_ENTER),
-            //MonitoredActivity(DetectedActivity.UNKNOWN, ActivityTransition.ACTIVITY_TRANSITION_ENTER),
-        )
-
-        fun setupActivityRecognition() {
-            if (ActivityCompat.checkSelfPermission(
-                    context,
-                    Manifest.permission.ACTIVITY_RECOGNITION
-                ) != PackageManager.PERMISSION_GRANTED
-            ) {
-                return
-            }
-
-            val transitions = monitoredActivities.map {
-                ActivityTransition.Builder()
-                    .setActivityType(it.detectedActivity)
-                    .setActivityTransition(it.activityTransition)
-                    .build()
-            }
-
-            val request = ActivityTransitionRequest(transitions)
-            val rIntent = Intent(context, ActivityRecognitionReceiver::class.java)
-            rIntent.putExtra("filter", filter)
-            val pendingIntent = PendingIntent.getBroadcast(
-                context,
-                202,
-                rIntent,
-                PendingIntent.FLAG_MUTABLE)
-
-            val task = com.google.android.gms.location.ActivityRecognition.getClient(context)
-                .requestActivityTransitionUpdates(request, pendingIntent)
-
-            task.addOnSuccessListener {
-                println("ACTIVITY RECOGNITION STARTED")
-            }
-
-            task.addOnFailureListener { e: Exception ->
-                println("ACTIVITY RECOGNITION FAILED TO START")
-                e.printStackTrace()
-            }
-        }
-    }
-
-    private data class MonitoredActivity(
-        val detectedActivity: Int,
-        val activityTransition: Int,
-    )
 }
